@@ -143,6 +143,7 @@ vmod_resolver__init(VRT_CTX,
 			    "error %d (%s)", err, dyn_getdns_strerror(err));
 			break;
 		}
+                getdns_context_set_resolution_type(c->context, GETDNS_RESOLUTION_STUB);
 		VSLIST_INSERT_HEAD(&r->contexts, c, list);
 		c->resolver = r;
 	}
