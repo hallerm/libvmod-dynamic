@@ -823,6 +823,7 @@ dom_update(struct dynamic_domain *dom, const struct res_cb *res,
 		assert(dom->obj->ttl_from == dns);
 	}
 	dom->deadline = now + ttl;
+	LOG(ctx, SLT_Error, dom, "%s: ttl=%.6f now=%.6f deadline=%.6f expires=%.6f", dom->addr, ttl, now, dom->deadline, dom->expires);
 }
 
 static void
